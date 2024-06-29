@@ -1,7 +1,11 @@
 var map = L.map('map', {
   minZoom: 2,
   maxZoom: 10,
-  zoomControl: false
+  zoomControl: false,
+  maxBounds: [
+    [-90, -180],
+    [90, 180]
+  ]
 }).setView([20, 0], 2);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {

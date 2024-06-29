@@ -24,6 +24,7 @@ html, body {
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
+  z-index: 1000; /* Ensure the info panel is on top of the map */
 }
 
 .info-panel.show {
