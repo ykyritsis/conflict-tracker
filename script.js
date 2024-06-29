@@ -82,8 +82,6 @@ conflicts.forEach(conflict => {
     `;
     document.getElementById('info').classList.add('show');
   });
-
-  markers.push(marker);
 });
 
 map.on('click', function() {
