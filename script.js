@@ -1,8 +1,12 @@
-var map = L.map('map').setView([20, 0], 2);
+var map = L.map('map', {
+  minZoom: 2,
+  maxZoom: 10,
+  zoomControl: false
+}).setView([20, 0], 2);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; <a href="https://carto.com/">CartoDB</a>',
-  maxZoom: 19
+  maxZoom: 10
 }).addTo(map);
 
 var conflicts = [
