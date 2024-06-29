@@ -1,0 +1,31 @@
+[
+  {
+    "year": 2024,
+    "conflicts": [
+      {
+        "location": [31.0461, 34.8516],
+        "title": "Israel-Palestine Conflict",
+        "description": "Ongoing conflict between Israel and Palestine.",
+        "deathToll": "XXX,XXX"
+      },
+      {
+        "location": [48.3794, 31.1656],
+        "title": "Russia-Ukraine Conflict",
+        "description": "Conflict between Russia and Ukraine.",
+        "deathToll": "XXX,XXX"
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "conflicts": [
+      {
+        "location": [33.2232, 43.6793],
+        "title": "Iraq-USA Conflict",
+        "description": "Conflict involving Iraq and the USA.",
+        "deathToll": "XXX,XXX"
+      }
+    ]
+  }
+  // Add more years and conflicts here
+]

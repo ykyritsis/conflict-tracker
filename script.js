@@ -5,43 +5,35 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
-var conflicts = [
-  {
-    year: 2024,
-    location: [34.0522, -118.2437],
-    title: "Conflict A",
-    description: "Description of Conflict A."
-  },
-  {
-    year: 2023,
-    location: [40.7128, -74.0060],
-    title: "Conflict B",
-    description: "Description of Conflict B."
-  }
-  // Add more static conflicts here
-];
 var markers = [];
 
 function loadConflicts(year) {
-  var filteredConflicts = conflicts.filter(conflict => conflict.year == year);
+  fetch('conflicts.json')
+    .then(response => response.json())
+    .then(data => {
+      var conflicts = data.find(entry => entry.year == year).conflicts;
 
-  markers.forEach(marker => {
-    map.removeLayer(marker);
-  });
-  markers = [];
+      markers.forEach(marker => {
+        map.removeLayer(marker);
+      });
+      markers = [];
 
-  filteredConflicts.forEach(conflict => {
-    var marker = L.circleMarker(conflict.location, {
-      color: 'yellow',
-      radius: 8
-    }).addTo(map);
+      conflicts.forEach(conflict => {
+        var marker = L.circleMarker(conflict.location, {
+          color: 'yellow',
+          radius: 8
+        }).addTo(map);
 
-    marker.on('click', function(e) {
-      document.getElementById('info').innerHTML = `<h2>${conflict.title}</h2><p>${conflict.description}</p>`;
+        marker.on('click', function(e) {
+          document.getElementById('info').innerHTML = `<h2>${conflict.title}</h2><p>${conflict.description}</p><p>Death Toll: ${conflict.deathToll}</p>`;
+        });
+
+        markers.push(marker);
+      });
+    })
+    .catch(error => {
+      console.error('Error loading conflicts:', error);
     });
-
-    markers.push(marker);
-  });
 }
 
 function updateYear(year) {
@@ -57,4 +49,4 @@ document.getElementById('themeToggle').addEventListener('change', function() {
   }
 });
 
-loadConflicts(2024);
+updateYear(2024);
