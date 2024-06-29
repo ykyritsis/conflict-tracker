@@ -48,16 +48,6 @@ body.light-mode #info {
   background: #000;
 }
 
-#yearSlider {
-  width: 80vw;
-  margin: 20px auto;
-}
-
-#yearLabel {
-  display: block;
-  margin: 10px auto;
-}
-
 /* Light/Dark mode switch */
 .switch {
   position: relative;
