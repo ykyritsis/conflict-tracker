@@ -1,14 +1,33 @@
----
-name: HTML Starter
-slug: html-starter-with-analytics
-description: HTML5 template with analytics and advanced routing configuration.
-deployUrl: https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/html&project-name=html
-relatedTemplates:
-  - nextjs-boilerplate
----
+# Global Conflict Tracker
 
-# HTML Starter
+This project is a web-based application that displays ongoing global conflicts on an interactive map. The map is powered by Leaflet and uses clustering to manage multiple markers.
 
-This is a starter HTML5 templates which is configured with Vercel Analytics (through a `script` tag), advanced routing with [Vercel Edge Middleware](https://vercel.com/docs/concepts/functions/edge-middleware), as well as some basic styles
+## Features
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/html&project-name=html)
+- Interactive map with conflict markers.
+- Markers clustered for better visualization.
+- Popup details for each conflict including severity, estimated death toll, start date, countries involved, and additional details.
+- Country flags displayed in the popup details.
+- Title fades out when a conflict marker is clicked.
+
+## Usage
+
+1. Open `index.html` in a web browser.
+
+## Dependencies
+
+- [Leaflet](https://leafletjs.com/) - For the interactive map.
+- [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) - For clustering map markers.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add new feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License.
