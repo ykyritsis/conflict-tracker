@@ -8,7 +8,13 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-  <h1>Global Conflict Tracker</h1>
+  <div class="header">
+    <h1>Global Conflict Tracker</h1>
+    <label class="switch">
+      <input type="checkbox" id="themeToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
   <input type="range" id="yearSlider" min="2000" max="2024" value="2024" step="1" oninput="updateYear(this.value)">
   <label for="yearSlider" id="yearLabel">Year: 2024</label>
   <div id="map"></div>
