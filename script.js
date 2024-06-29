@@ -2,10 +2,12 @@ var map = L.map('map', {
   minZoom: 2,
   maxZoom: 10,
   zoomControl: false,
+  worldCopyJump: true, // Allows the map to be looped horizontally
   maxBounds: [
     [-90, -180],
     [90, 180]
-  ]
+  ],
+  maxBoundsViscosity: 1.0 // Prevents dragging the map out of bounds
 }).setView([20, 0], 2);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
